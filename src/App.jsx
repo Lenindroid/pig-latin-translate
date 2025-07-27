@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <header>
-        <h1><span>Pig Latin</span> <span>Translate</span></h1>
+        <h1><span>Pig Latin</span> <span className="translate">Translate</span></h1>
         <div></div>
       </header>
       <Input></Input>
