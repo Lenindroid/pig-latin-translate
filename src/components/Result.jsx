@@ -7,7 +7,7 @@ function Result() {
     <div className="box">
         <h2 className="lang-two">Pig latin</h2>
         <div className="output text-block"></div>
-        <div>
+        <div className="button-container">
           <Voice></Voice>
           <Copy></Copy>
         </div>

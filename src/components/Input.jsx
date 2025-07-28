@@ -8,7 +8,7 @@ function Input() {
     <div className="box">
         <h2 className="lang-one">English</h2>
         <textarea className="text-block"></textarea>
-        <div>
+        <div className="button-container">
           <Voice></Voice>
           <Count></Count>
         </div>
