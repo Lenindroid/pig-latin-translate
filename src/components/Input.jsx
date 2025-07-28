@@ -6,7 +6,7 @@ import Voice from './Voice'
 function Input() {
   return (
     <div className="box">
-        <h2>English</h2>
+        <h2 className="lang-one">English</h2>
         <textarea className="text-block"></textarea>
         <div>
           <Voice></Voice>

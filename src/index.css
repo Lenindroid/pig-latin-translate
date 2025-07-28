@@ -40,6 +40,21 @@ header {
   gap: 1rem;
 }
 
+h2 {
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 14px;
+  font-weight: 250;
+  padding: 0.3rem 0;
+}
+
+.lang-one {
+  color: rgb(26, 115, 232);
+}
+
+.lang-two {
+  color: #ff79ab;
+}
+
 textarea {
   resize: none;
   width: 100%;
