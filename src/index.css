@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,22 +8,25 @@
   padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 header {
   position: sticky;
   background-color: #ff79ab;
   top: 0;
+  height: 30%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .piglatin {
   font-family: "Roboto", Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 500;
+  color: white;
 }
 
 .translate {
   color: rgb(95, 99, 104);
   font-family: "Roboto", Arial, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: 300;
 }
