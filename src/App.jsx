@@ -8,8 +8,10 @@ function App() {
       <header>
         <h1><span className="piglatin">Pig Latin</span> <span className="translate">Translate</span></h1>
       </header>
-      <Input></Input>
-      <Result></Result>
+      <div className="boxes">
+        <Input></Input>
+        <Result></Result>
+      </div>
     </>
   )
 }

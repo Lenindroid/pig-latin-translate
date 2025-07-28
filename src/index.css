@@ -30,3 +30,29 @@ header {
   font-optical-sizing: auto;
   font-weight: 300;
 }
+
+.boxes {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 70%;
+  width: 100%;
+  gap: 1rem;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+.text-block {
+  min-height: 3rem;
+  border: 1px solid #ccc;
+}
+
+.box {
+  width: 40%;
+  height: auto;
+  min-height: 3rem;
+  box-sizing: border-box;
+}
