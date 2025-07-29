@@ -5,7 +5,13 @@ import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 function Voice({ type }) {
 
   function speakText() {
-    let text = document.querySelector(type).textContent;
+    let text;
+    if (type === '.input') {
+      text = document.querySelector('.input').value;
+    } else if (type === '.output') {
+      text = document.querySelector('.output').textContent;
+    }
+    
     if (text) {
       const utterance = new SpeechSynthesisUtterance(text);
       speechSynthesis.speak(utterance);
