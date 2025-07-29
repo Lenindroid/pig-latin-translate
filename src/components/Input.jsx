@@ -15,7 +15,7 @@ function Input({ setText }) {
         for(let i = 0; i < str.length; i++) {
           if(str[i].toUpperCase() != 'A' && str[i].toUpperCase() != 'E'&& str[i].toUpperCase() != 'I'&&str[i].toUpperCase() != 'O'&& str[i].toUpperCase() != 'U') {
             if (!consonantFinished) {
-              consonantCluster += str[i];
+              consonantCluster += str[i].toLowerCase();
             } else {
               newStr += str[i];
             }
@@ -26,6 +26,7 @@ function Input({ setText }) {
         }
         newStr += consonantCluster; 
         newStr += 'ay'
+        if (str[0] === str[0].toUpperCase()) newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1);
         return newStr;
     }
 }
