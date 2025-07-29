@@ -2,7 +2,7 @@ import React from 'react'
 
 function Count() {
   return (
-    <span className="char-count">0/5000</span>
+    <span className="char-count">{document.querySelector('.input').value.length}/5000</span>
   )
 }
 
