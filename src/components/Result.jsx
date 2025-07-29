@@ -10,7 +10,7 @@ function Result({ text }) {
           {text}
         </div>
         <div className="button-container">
-          <Voice></Voice>
+          <Voice type=".output"></Voice>
           <Copy></Copy>
         </div>
     </div>

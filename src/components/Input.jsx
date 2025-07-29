@@ -43,9 +43,9 @@ function Input({ setText }) {
   return (
     <div className="box">
         <h2 className="lang-one">English</h2>
-        <textarea className="text-block" onChange={updateText}></textarea>
+        <textarea className="text-block input" onChange={updateText}></textarea>
         <div className="button-container">
-          <Voice></Voice>
+          <Voice type=".input"></Voice>
           <Count></Count>
         </div>
     </div>
