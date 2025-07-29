@@ -3,8 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-solid-svg-icons'
 
 function Copy() {
+  function copyToClipboard() {
+    const textToCopy = document.querySelector('.output').textContent;
+    navigator.clipboard.writeText(textToCopy);
+  }
+
   return (
-    <button>
+    <button onClick={copyToClipboard}>
       <FontAwesomeIcon icon={faCopy} />
     </button>
   )
