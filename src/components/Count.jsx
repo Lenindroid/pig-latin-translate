@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Count() {
+function Count({ text }) {
   return (
-    <span className="char-count">{document.querySelector('.input').value.length}/5000</span>
+    <span className="char-count">{text.length}/5000</span>
   )
 }
 

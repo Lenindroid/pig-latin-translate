@@ -3,9 +3,10 @@ import Count from './Count'
 import Voice from './Voice'
 
 
-function Input({ setText }) {
+function Input({ setText, text }) {
 
   function translatePigLatin(str) {
+    if (!str) return '';
     let newStr = '';
     let consonantCluster = '';
     let consonantFinished = false;
@@ -50,7 +51,7 @@ function Input({ setText }) {
         <textarea className="text-block input" onChange={updateText} maxLength="5000"></textarea>
         <div className="button-container">
           <Voice type=".input"></Voice>
-          <Count></Count>
+          <Count text={text}></Count>
         </div>
     </div>
   )
