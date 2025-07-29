@@ -35,7 +35,11 @@ function Input({ setText }) {
       setText("Translation");
       return;
     } else {
-      setText(translatePigLatin(e.target.value));
+      const array = e.target.value.split(' ');
+      for (let i = 0; i < array.length; i++) {
+        array[i] = translatePigLatin(array[i]);
+      }
+      setText(array.join(' '));
     }
     
   }
