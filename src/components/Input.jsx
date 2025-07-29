@@ -3,7 +3,8 @@ import Count from './Count'
 import Voice from './Voice'
 
 
-function Input({ setText, text }) {
+function Input({ setText }) {
+  const [length, setLength] = React.useState(0);
 
   function translatePigLatin(str) {
     if (!str) return '';
@@ -32,6 +33,7 @@ function Input({ setText, text }) {
     }
 }
   function updateText(e) {
+    setLength(e.target.value.length);
     if (e.target.value === "") {
       setText("Translation");
       return;
@@ -51,7 +53,7 @@ function Input({ setText, text }) {
         <textarea className="text-block input" onChange={updateText} maxLength="5000"></textarea>
         <div className="button-container">
           <Voice type=".input"></Voice>
-          <Count text={text}></Count>
+          <Count length={length}></Count>
         </div>
     </div>
   )

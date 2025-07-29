@@ -12,7 +12,7 @@ function App() {
         <h1><span className="piglatin">Pig Latin</span> <span className="translate">Translate</span></h1>
       </header>
       <div className="boxes">
-        <Input setText={setText} text={text}></Input>
+        <Input setText={setText}></Input>
         <Result text={text}></Result>
       </div>
     </>
