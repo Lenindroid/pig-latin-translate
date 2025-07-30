@@ -33,6 +33,7 @@ function Input({ setText }) {
     }
   }
 
+  /*
   function pigLatinToEnglish(str) {
     if (str.endsWith('way')) return str.slice(0, -3); 
     else {
@@ -58,8 +59,8 @@ function Input({ setText }) {
 
         return consonantCluster + noClusterString.split('').reverse().join('');
     }
-  }
-  
+  }*/
+
   function updateText(e) {
     setLength(e.target.value.length);
     if (e.target.value === "") {
