@@ -7,6 +7,14 @@ function Voice({ type }) {
   const utteranceRef = React.useRef(null);
 
   function speakText() {
+    if (speaking) {
+      if (utteranceRef.current) {
+        speechSynthesis.cancel();
+        setSpeaking(false);
+      }
+      return;
+    }
+
     let text;
     if (type === '.input') {
       text = document.querySelector('.input').value;
