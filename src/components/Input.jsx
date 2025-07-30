@@ -31,7 +31,35 @@ function Input({ setText }) {
         if (str[0] === str[0].toUpperCase()) newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1);
         return newStr;
     }
-}
+  }
+
+  function pigLatinToEnglish(str) {
+    if (str.endsWith('way')) return str.slice(0, -3); 
+    else {
+        let newStr = str.slice(0, -2);
+        let consonantCluster = '';
+        let consonantFinished = false;
+        let noClusterString = '';
+
+        for (let i = newStr.length - 1; i >= 0; i--) {
+            if (newStr[i].toUpperCase() !== 'A' && newStr[i].toUpperCase() !== 'E' && newStr[i].toUpperCase() !== 'I' && newStr[i].toUpperCase() !== 'O' && newStr[i].toUpperCase() !== 'U') {
+                if (!consonantFinished) {
+                    consonantCluster = newStr[i] + consonantCluster;
+                } else {
+                    noClusterString += newStr[i];
+                }
+            } else {
+                consonantFinished = true;
+                noClusterString += newStr[i];
+            }
+        }
+
+        console.log(consonantCluster, noClusterString);
+
+        return consonantCluster + noClusterString.split('').reverse().join('');
+    }
+  }
+  
   function updateText(e) {
     setLength(e.target.value.length);
     if (e.target.value === "") {
