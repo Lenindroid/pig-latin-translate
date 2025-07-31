@@ -116,3 +116,10 @@ button:active {
   font-size: 12px;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
+
+.switch-lang-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
