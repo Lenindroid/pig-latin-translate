@@ -3,7 +3,7 @@ import Count from './Count'
 import Voice from './Voice'
 
 
-function Input({ setText }) {
+function Input({ setText, pigLatinLeft }) {
   const [length, setLength] = React.useState(0);
 
   function translatePigLatin(str) {
@@ -33,33 +33,36 @@ function Input({ setText }) {
     }
   }
 
-  /*
+
+  
   function pigLatinToEnglish(str) {
     if (str.endsWith('way')) return str.slice(0, -3); 
     else {
         let newStr = str.slice(0, -2);
         let consonantCluster = '';
-        let consonantFinished = false;
-        let noClusterString = '';
+        let rest = '';
+        let i = newStr.length - 1;
 
-        for (let i = newStr.length - 1; i >= 0; i--) {
-            if (newStr[i].toUpperCase() !== 'A' && newStr[i].toUpperCase() !== 'E' && newStr[i].toUpperCase() !== 'I' && newStr[i].toUpperCase() !== 'O' && newStr[i].toUpperCase() !== 'U') {
-                if (!consonantFinished) {
-                    consonantCluster = newStr[i] + consonantCluster;
-                } else {
-                    noClusterString += newStr[i];
-                }
-            } else {
-                consonantFinished = true;
-                noClusterString += newStr[i];
-            }
+        // Find the consonant cluster at the end
+        while (i >= 0 && !"AEIOUaeiou".includes(newStr[i])) {
+          consonantCluster = newStr[i] + consonantCluster;
+          i--;
         }
 
-        console.log(consonantCluster, noClusterString);
+        // The rest of the string (before the cluster)
+        rest = newStr.slice(0, i + 1);
 
-        return consonantCluster + noClusterString.split('').reverse().join('');
+        // Reconstruct the English word
+        let result = consonantCluster + rest;
+
+        // Capitalize if original was capitalized
+        if (str[0] === str[0].toUpperCase()) {
+          result = result.charAt(0).toUpperCase() + result.slice(1).toLowerCase();
+        }
+
+        return result;
     }
-  }*/
+  }
 
   function updateText(e) {
     setLength(e.target.value.length);
@@ -69,7 +72,11 @@ function Input({ setText }) {
     } else {
       const array = e.target.value.split(' ');
       for (let i = 0; i < array.length; i++) {
-        array[i] = translatePigLatin(array[i]);
+        if (pigLatinLeft) {
+          array[i] = translatePigLatin(array[i]);
+        } else {
+          array[i] = pigLatinToEnglish(array[i]); 
+        }
       }
       setText(array.join(' '));
     }
@@ -87,5 +94,4 @@ function Input({ setText }) {
     </div>
   )
 }
-
 export default Input

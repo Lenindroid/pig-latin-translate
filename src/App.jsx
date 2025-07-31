@@ -14,7 +14,7 @@ function App() {
         <h1><span className="piglatin">Pig Latin</span> <span className="translate">Translate</span></h1>
       </header>
       <div className="boxes">
-        <Input setText={setText}></Input>
+        <Input setText={setText} pigLatinLeft={pigLatinLeft}></Input>
         <Result text={text}></Result>
       </div>
       <div className="switch-lang-container">
